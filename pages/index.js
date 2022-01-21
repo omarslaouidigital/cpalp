@@ -4,10 +4,10 @@ import En from './en'
 import Ar from './ar'
 import Fr from './fr'
 
-export default function Home() {
+
+function Home() {
 	//Custom Hooks
 	const [lang] = useLang()
-
 	//main render
 	return (
 		<div>
@@ -19,3 +19,7 @@ export default function Home() {
 		</div>
 	)
 }
+
+
+
+export default Home
