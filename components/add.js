@@ -211,7 +211,7 @@ const Add = () => {
             url: '/api/add-niche',
             data: niche
         }).then(result => {
-            if(result.error === false){
+            if(result.data.error === true){
                 setShowError(true)
                 setErrMsg('Error while adding the niche :(')
                 setTimeout(() => {

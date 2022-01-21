@@ -5,6 +5,7 @@ import 'animate.css'
 import {admin} from '../db.json'
 import {useState, useEffect} from 'react'
 import Panel from '../components/panel'
+import Axios from 'axios'
 
 const Admin = () => {
     //useState HOOKS
@@ -22,7 +23,7 @@ const Admin = () => {
     },[])
 
     //functions
-    const check_login = () => {
+    const check_login = async() => {
         if(!login || !password){
             setShowError(true)
             setErrorMsg('Login or password is empty!')
@@ -30,25 +31,22 @@ const Admin = () => {
                 setShowError(false)
             }, 3000)
         }
-        if(login !== admin.login){
-            setLogin('')
-            setPassword('')
-            setShowError(true)
-            setErrorMsg('Login incorrect!')
-            setTimeout(() => {
-                setShowError(false)
-            }, 3000)
-        }
-        if(password !== admin.password){
-            setLogin('')
-            setPassword('')
-            setShowError(true)
-            setErrorMsg('Login incorrect!')
-            setTimeout(() => {
-                setShowError(false)
-            }, 3000)
-        }
-        if(login == admin.login && password == admin.password){
+        await Axios({
+            method: 'POST',
+            url: '/api/check-auth',
+            data: {
+                login: login,
+                password: password
+            }
+        }).then(result => {
+            if(result.data.incorrect){
+                setShowError(true)
+                setErrorMsg('Login or password is incorrect!')
+                setTimeout(() => {
+                    setShowError(false)
+                }, 3000)
+                return 0
+            }
             setLogin('')
             setPassword('')
             setShowSuccess(true)
@@ -57,7 +55,7 @@ const Admin = () => {
             setTimeout(() => {
                 setConnected(true)
             }, 2000)
-        }
+        })
     }
 
     //main render

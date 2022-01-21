@@ -10,6 +10,7 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import {useState, useEffect} from 'react'
 import Add from './add'
 import Remove from './remove'
+import Settings from './settings'
 
 const Panel = () => {
     //useState HOOKS
@@ -53,6 +54,7 @@ const Panel = () => {
                     }
                 </div>
                 {page === 2 && <Add />}
+                {page === 3 && <Settings />}
                 {page === 5 && <Remove />}
             </div>
             
