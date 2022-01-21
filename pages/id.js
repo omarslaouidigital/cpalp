@@ -13,7 +13,7 @@ import SettingsIcon from '@mui/icons-material/Settings'
 import CloseIcon from '@mui/icons-material/Close'
 import LocalMallIcon from '@mui/icons-material/LocalMall'
 
-const En = () => {
+const Id = () => {
     //useState Hooks
     const [step_2, setStep2] = useState(false)
     const [img, setImg] = useState('')
@@ -70,12 +70,12 @@ const En = () => {
                 progressRef.current()
             }, 500)
             
-            setProgressText('Downloading ' + title + '...')
+            setProgressText('Mengunduh ' + title + '...')
             setTimeout(() => {
-                setProgressText('Unpacking ' + title + '.gz')
+                setProgressText('Menginstal ' + title + '.gz')
             }, 8000)
             setTimeout(() => {
-                setProgressText('Starting injection...')
+                setProgressText('Sekarang kami sedang mengunduh aplikasi di perangkat Anda...')
             }, 16000)
           
             return () => {
@@ -104,11 +104,11 @@ const En = () => {
 
             {/* H T M L   H E A D */}
             <Head>
-                <title>{lp_name} - Tweaked and Premium Apps for free, Jailbreak and many more...</title>
+                <title>{lp_name} - Aplikasi Tweak dan Premium Gratis, Jailbreak, dan lainnya...</title>
                 <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
-                <meta name="lang" content="en-US"/>
+                <meta name="lang" content="id-ID"/>
                 <meta httpEquiv="X-UA-Compatible" content="IE=7" />
-                <meta name="description" content="GG-EZ.net - Tweaked and Premium Apps for free, Jailbreak and many more..." />
+                <meta name="description" content="GG-EZ.net - Aplikasi Tweak dan Premium Gratis, Jailbreak, dan lainnya..." />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
             </Head>
 
@@ -117,7 +117,7 @@ const En = () => {
             <div className="w-full shadow-md text-center text-white bg-red-500 py-4 px-5">
                 <img src={lp_logo} width='200px' height='70px' className="mx-auto rounded-xl"/>
                 <h1 className="my-2 px-5"><LocalMallIcon sx={{fontSize: '80px'}} className='font-bold'/></h1>
-                <p className="animate__animated animate__backInLeft text-sm">Tweaked and Premium Apps for free, Jailbreak and many more...</p>
+                <p className="animate__animated animate__backInLeft text-sm">Aplikasi Tweak dan Premium Gratis, Jailbreak, dan lainnya...</p>
             </div>
 
 
@@ -144,9 +144,9 @@ const En = () => {
                         <hr className="border-gray-300 border w-5/6 mx-auto my-5"/>
                         {!loading ?
                             <>
-                            <h1 className="text-red-500 font-bold text-xl">Download ready</h1>
-                            <p className="px-6 text-gray-600">Click the button below in order to start with your app download.</p>
-                            <button onClick={e => setLoading(true)} className="mt-4 py-4 px-8 bg-red-500 rounded-xl shadow-lg font-bold text-white animate__animated animate__pulse animate__infinite">DOWNLOAD NOW</button>
+                            <h1 className="text-red-500 font-bold text-xl">Unduh Siap</h1>
+                            <p className="px-6 text-gray-600">Klik tombol di bawah untuk memulai unduhan aplikasi Anda.</p>
+                            <button onClick={e => setLoading(true)} className="mt-4 py-4 px-8 bg-red-500 rounded-xl shadow-lg font-bold text-white animate__animated animate__pulse animate__infinite">MULAI UNDUH</button>
                             </>
                             :
                             <> 
@@ -170,16 +170,16 @@ const En = () => {
                     <span className="absolute inset-y-0 left-0 flex items-center pl-5">
                         <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" className="w-6 h-6"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </span>
-                    <input onChange={e => setSearch(e.target.value)} type="text" className="w-full mx-auto bg-gray-300 rounded-xl shadow-sm py-3 text-gray-200 text-lg text-center" placeholder="Search for apps..."/>
+                    <input onChange={e => setSearch(e.target.value)} type="text" className="w-full mx-auto bg-gray-300 rounded-xl shadow-sm py-3 text-gray-200 text-lg text-center" placeholder="Jelajahi aplikasi atau game..."/>
                 </div>
 
                 {/* Niches */}
                 <div className="grid gap-3 grid-cols-1 md:grid-cols-2 md:mt-2 md:w-3/6 md:mx-auto">
 
                     {niches.map((niche, i) => (
-                        niche.en_title &&
-                        <div key={i} onClick={e => choose_niche(e)} className={`${search !== '' && !niche.en_keywords.includes(search.toLowerCase()) && 'hidden'} w-full bg-gray-50 rounded-xl shadow-lg mt-4 md:my-2 relative py-8 cursor-pointer `}>
-                            <div className="locker hidden">{niche.en_locker}</div>
+                        niche.id_title &&
+                        <div key={i} onClick={e => choose_niche(e)} className={`${search !== '' && !niche.id_keywords.includes(search.toLowerCase()) && 'hidden'} w-full bg-gray-50 rounded-xl shadow-lg mt-4 md:my-2 relative py-8 cursor-pointer `}>
+                            <div className="locker hidden">{niche.id_locker}</div>
                             <span className="absolute top-3 right-12"><AppleIcon className="text-slate-300" /></span>
                             <span className="absolute top-3 right-5"><AndroidIcon className="text-slate-300" /></span>
                             <div className='flex gap-3 px-3'>
@@ -189,9 +189,9 @@ const En = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <h6 className='text-gray-300 text-sm'>Author: <span className="text-red-300 author">{niche.author}</span></h6>
-                                    <h1 className="font-bold text-gray-600 text-2xl">{niche.en_title}</h1>
-                                    <p className="text-gray-400 text-sm description">{niche.en_description}</p>
+                                    <h6 className='text-gray-300 text-sm'>Pengarang: <span className="text-red-300 author">{niche.author}</span></h6>
+                                    <h1 className="font-bold text-gray-600 text-2xl">{niche.id_title}</h1>
+                                    <p className="text-gray-400 text-sm description">{niche.id_description}</p>
                                     <div className='flex'>
                                         <StarIcon className='mt-2 text-yellow-400'/>
                                         <StarIcon className='mt-2 text-yellow-400'/>
@@ -217,4 +217,4 @@ const En = () => {
     )
 };
 
-export default En;
+export default Id;

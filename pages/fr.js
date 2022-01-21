@@ -10,6 +10,8 @@ import {useState, useRef, useEffect} from 'react'
 import Box from '@mui/material/Box'
 import LinearProgress from '@mui/material/LinearProgress'
 import SettingsIcon from '@mui/icons-material/Settings'
+import CloseIcon from '@mui/icons-material/Close'
+import LocalMallIcon from '@mui/icons-material/LocalMall'
 
 const Fr = () => {
     //useState Hooks
@@ -23,11 +25,26 @@ const Fr = () => {
     const [progress_text, setProgressText] = useState('')
     const [locker, setLocker] = useState('')
     const [search, setSearch] = useState('')
+    const [niches, setNiches] = useState([])
+    const [lp_name, setLpName] = useState('')
+    const [lp_logo, setLpLogo] = useState('')
+    const [author, setAuthor] = useState()
 
     //useRef Hooks
     const progressRef = useRef(() => {})
+    
+    //useEffect HOOKS
+    useEffect(async() => {
+        const fetched_data = await fetch('/api/get-niches')
+        const json_data = await fetched_data.json()
+        setNiches(json_data)
 
-    //useEffect Hooks
+        const fetched_data2 = await fetch('/api/get-settings')
+        const json_data2 = await fetched_data2.json()
+        setLpName(json_data2.name)
+        setLpLogo(json_data2.logo)
+    }, [])
+
     useEffect(() => {
         progressRef.current = () => {
         if (progress > 100) {
@@ -53,13 +70,13 @@ const Fr = () => {
                 progressRef.current()
             }, 500)
             
-            setProgressText('Télechargement de ' + title + '...')
+            setProgressText('Telechargement de ' + title + '...')
             setTimeout(() => {
-                setProgressText('Installation de ' + title + '.gz')
+                setProgressText('Installation de ' + title + '.zip')
             }, 8000)
             setTimeout(() => {
-                setProgressText('Début de l\'injection...')
-            }, 13000)
+                setProgressText('Début d\'injection sur votre appareil...')
+            }, 16000)
           
             return () => {
                 clearInterval(timer)
@@ -70,12 +87,11 @@ const Fr = () => {
     //functions
     const choose_niche = (e) => {
         setStep2(true)
-        const url = new URL(e.target.parentNode.parentNode.querySelector('.image').src)
-        const img_src = '/' + url.search.substring(8).split('&')[0]
         setTitle(e.target.parentNode.parentNode.querySelector('h1').innerText)
         setLocker(e.target.parentNode.parentNode.parentNode.querySelector('.locker').innerText)
         setDescription(e.target.parentNode.parentNode.querySelector('.description').innerText)
-        setImg(img_src)
+        setAuthor(e.target.parentNode.parentNode.querySelector('.author').innerText)
+        setImg(e.target.parentNode.parentNode.querySelector('.image').src)
     }
 
     const isShow = (e) => {
@@ -88,20 +104,20 @@ const Fr = () => {
 
             {/* H T M L   H E A D */}
             <Head>
-                <title>GG-EZ.net - Application Premium Gratuit, jeux gratuit et plus...</title>
+                <title>{lp_name} - Application Premium gratuit, les mod de jeux et plus...</title>
                 <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
                 <meta name="lang" content="fr-FR"/>
                 <meta httpEquiv="X-UA-Compatible" content="IE=7" />
-                <meta name="description" content="GG-EZ.net - Application Premium Gratuit, jeux gratuit et plus..." />
+                <meta name="description" content="GG-EZ.net - Application Premium gratuit, les mod de jeux et plus..." />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
             </Head>
 
 
             {/* H E A D E R */}
             <div className="w-full shadow-md text-center text-white bg-red-500 py-4 px-5">
-                <Image src='/logo.png' width='200px' height='70px'/>
-                <h1 className="font-bold text-4xl my-2 px-5">GG-EZ.net</h1>
-                <p className="animate__animated animate__backInLeft text-sm">Application Premium Gratuit, jeux gratuit et plus...</p>
+                <img src={lp_logo} width='200px' height='70px' className="mx-auto rounded-xl"/>
+                <h1 className="my-2 px-5"><LocalMallIcon sx={{fontSize: '80px'}} className='font-bold'/></h1>
+                <p className="animate__animated animate__backInLeft text-sm">Application Premium gratuit, les mod de jeux et plus...</p>
             </div>
 
 
@@ -110,7 +126,8 @@ const Fr = () => {
                 <>
                     <div className="w-full h-screen overflow-x-hidden overflow-y-hidden bg-black fixed top-0 z-30 opacity-80"></div>
                     <div className="w-5/6 md:w-2/6 bg-gray-200 rounded-xl shadow-lg py-8 text-center fixed top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 z-50 animate__animated animate__fadeIn">
-                        <Image src={img} width='90px' height='90px' className='rounded-xl'/>
+                        <CloseIcon className='absolute top-3 right-5 text-gray-200 bg-gray-400 rounded-xl cursor-pointer' onClick={e => setStep2(false)}/>
+                        <img src={img} width='90px' height='90px' className='rounded-xl mx-auto'/>
                         <div className="flex text-center gap-2 text-gray-400 mx-auto mt-2 justify-center">
                             <AppleIcon />
                             <AndroidIcon />    
@@ -121,14 +138,14 @@ const Fr = () => {
                             <CloudDownloadIcon />
                             <span className='font-bold'>900k+</span>
                         </div>
-                        <div className='text-red-400 font-bold text-sm mt-5'>GG-EZ.net</div>
+                        <div className='text-red-400 font-bold text-sm mt-5'>{author}</div>
                         <h1 className="font-bold text-gray-600 text-2xl">{title}</h1>
                         <p className="text-gray-400 text-sm description px-5">{description}</p>
                         <hr className="border-gray-300 border w-5/6 mx-auto my-5"/>
                         {!loading ?
                             <>
                             <h1 className="text-red-500 font-bold text-xl">Telechargement Prêt</h1>
-                            <p className="px-6 text-gray-600">Cliquer sur le bouton telecharger pour commencer votre telechargement</p>
+                            <p className="px-6 text-gray-600">Clicker sur le bouton telecharger pour commencer votre telechargement.</p>
                             <button onClick={e => setLoading(true)} className="mt-4 py-4 px-8 bg-red-500 rounded-xl shadow-lg font-bold text-white animate__animated animate__pulse animate__infinite">TELECHARGER</button>
                             </>
                             :
@@ -159,30 +176,35 @@ const Fr = () => {
                 {/* Niches */}
                 <div className="grid gap-3 grid-cols-1 md:grid-cols-2 md:mt-2 md:w-3/6 md:mx-auto">
 
-                    <div onClick={e => choose_niche(e)} className={`${search !== '' && !'instagram insta insta++ instagram++'.includes(search) && 'hidden'} w-full bg-gray-50 rounded-xl shadow-lg mt-4 md:my-2 relative py-8 cursor-pointer `}>
-                        <div className="locker hidden">https://google.com</div>
-                        <span className="absolute top-3 right-12"><AppleIcon className="text-slate-300" /></span>
-                        <span className="absolute top-3 right-5"><AndroidIcon className="text-slate-300" /></span>
-                        <div className='flex gap-3 px-3'>
-                            <div className="relative w-32 text-center justify-center align-middle items-center">
-                                <div className="absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 w-5/6 md:w-4/6">
-                                    <Image src='/insta_verified.png' className="image" width='100px' height='100px' />
+                    {niches.map((niche, i) => (
+                        niche.fr_title &&
+                        <div key={i} onClick={e => choose_niche(e)} className={`${search !== '' && !niche.fr_keywords.includes(search.toLowerCase()) && 'hidden'} w-full bg-gray-50 rounded-xl shadow-lg mt-4 md:my-2 relative py-8 cursor-pointer `}>
+                            <div className="locker hidden">{niche.fr_locker}</div>
+                            <span className="absolute top-3 right-12"><AppleIcon className="text-slate-300" /></span>
+                            <span className="absolute top-3 right-5"><AndroidIcon className="text-slate-300" /></span>
+                            <div className='flex gap-3 px-3'>
+                                <div className="relative w-32 text-center justify-center align-middle items-center">
+                                    <div className="absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 w-5/6 md:w-4/6">
+                                        <img src={niche.image} className="image rounded-xl" width='80px' height='80px' />
+                                    </div>
                                 </div>
-                            </div>
-                            <div>
-                                <h6 className='text-gray-300 text-sm'>Auteur: <span className="text-red-300">gg-ez.net</span></h6>
-                                <h1 className="font-bold text-gray-600 text-2xl">Instagram++</h1>
-                                <p className="text-gray-400 text-sm description">Cette application va vous permettre d&apos;avoir compte instagram verifié gratuitement</p>
-                                <div className='flex'>
-                                    <StarIcon className='mt-2 text-yellow-400'/>
-                                    <StarIcon className='mt-2 text-yellow-400'/>
-                                    <StarIcon className='mt-2 text-yellow-400'/>
-                                    <StarIcon className='mt-2 text-yellow-400'/>
-                                    <StarIcon className='mt-2 text-yellow-400'/>
+                                <div>
+                                    <h6 className='text-gray-300 text-sm'>Auteur: <span className="text-red-300 author">{niche.author}</span></h6>
+                                    <h1 className="font-bold text-gray-600 text-2xl">{niche.fr_title}</h1>
+                                    <p className="text-gray-400 text-sm description">{niche.fr_description}</p>
+                                    <div className='flex'>
+                                        <StarIcon className='mt-2 text-yellow-400'/>
+                                        <StarIcon className='mt-2 text-yellow-400'/>
+                                        <StarIcon className='mt-2 text-yellow-400'/>
+                                        <StarIcon className='mt-2 text-yellow-400'/>
+                                        <StarIcon className='mt-2 text-yellow-400'/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    ))}
+
+                    
 
                    
                 </div>
