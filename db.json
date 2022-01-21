@@ -1,9 +1,19 @@
 {
-  "niches": [],
+  "niches": [
+    {
+      "id": "e753d43b-e719-4635-b7f5-7d44cf5256bf",
+      "image": "https://i.imgur.com/BtVZ3Tb.png",
+      "author": "gg-ez.net",
+      "en_title": "Spotify++",
+      "en_description": "Premium version of spotify without edvertising.",
+      "en_keywords": "spotify spotify++ spotify premium",
+      "en_locker": "https://ogads.com"
+    }
+  ],
   "admin": {
     "login": "zalex",
     "password": "souhailosse",
-    "connection_id": "cb7cb4bd-b631-4447-b907-5b9ae6681abb"
+    "connection_id": "9dc3facb-fbf9-40d5-8e39-0de2c4c6aeef"
   },
   "settings": {
     "logo": "https://i.imgur.com/WXWZqbu.png",

@@ -31,7 +31,7 @@ const Remove = () => {
 
             <div className="grid gap-2 grid-cols-4 w-full mt-8 mx-auto">
                 {niches.map((niche, i) => (
-                    <div key={i} className='py-3 px-4 rounded-xl shadow-lg bg-gray-300'>
+                    <div key={i} className='py-3 px-4 rounded-xl my-2 shadow-lg bg-gray-300'>
                         <div className="flex gap-2 px-3 py-2 text-center">
                             <img src={niche.image} className='rounded-xl' width="70px" height="70px" />
                             <h1 className='text-center font-bold text-lg px-3'>langs : 
