@@ -6,6 +6,7 @@ import {admin} from '../db.json'
 import {useState, useEffect} from 'react'
 import Panel from '../components/panel'
 import Axios from 'axios'
+import { v4 as uuidv4 } from 'uuid'
 
 const Admin = () => {
     //useState HOOKS
@@ -19,7 +20,17 @@ const Admin = () => {
 
     //useEffect HOOKS
     useEffect(() => {
-        window && window.localStorage.getItem('connected') === 'true' && setConnected(true)
+        if(window){
+            if(window.localStorage.getItem('connection_id') !== "false"){
+                Axios({
+                    method: 'POST',
+                    url: '/api/check-connection',
+                    data: {id: window.localStorage.getItem('connection_id')}
+                }).then(result => {
+                    if(result.data.connected) setConnected(true)
+                })
+            }
+        }
     },[])
 
     //functions
@@ -38,7 +49,7 @@ const Admin = () => {
                 login: login,
                 password: password
             }
-        }).then(result => {
+        }).then(async(result) => {
             if(result.data.incorrect){
                 setShowError(true)
                 setErrorMsg('Login or password is incorrect!')
@@ -51,7 +62,13 @@ const Admin = () => {
             setPassword('')
             setShowSuccess(true)
             setSuccessMsg('Connected successfully 👍')
-            window.localStorage.setItem('connected','true')
+            let id = uuidv4()
+            window.localStorage.setItem('connection_id', id)
+            await Axios({
+                method: 'PUT',
+                url: '/api/update-connection',
+                data: {id: id}
+            })
             setTimeout(() => {
                 setConnected(true)
             }, 2000)

@@ -19,7 +19,7 @@ const Panel = () => {
 
     //functions
     const log_out = () => {
-        window.localStorage.setItem('connected', false)
+        window.localStorage.setItem('connection_id', "")
         window.location.reload()
     }
 

@@ -2,6 +2,7 @@
   "niches": [],
   "admin": {
     "login": "admin",
-    "password": "admin"
+    "password": "admin",
+    "connection_id": "c619b95e-3f2e-4d67-b2b5-4427720c661a"
   }
 }
