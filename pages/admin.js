@@ -30,16 +30,25 @@ const Admin = () => {
                 setShowError(false)
             }, 3000)
         }
-        if(login !== admin.user || password !== admin.password){
+        if(login !== admin.login){
             setLogin('')
             setPassword('')
             setShowError(true)
-            setErrorMsg('Login or password incorrect!')
+            setErrorMsg('Login incorrect!')
             setTimeout(() => {
                 setShowError(false)
             }, 3000)
         }
-        if(login === admin.user && password === admin.password){
+        if(password !== admin.password){
+            setLogin('')
+            setPassword('')
+            setShowError(true)
+            setErrorMsg('Login incorrect!')
+            setTimeout(() => {
+                setShowError(false)
+            }, 3000)
+        }
+        if(login == admin.login && password == admin.password){
             setLogin('')
             setPassword('')
             setShowSuccess(true)
