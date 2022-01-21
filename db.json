@@ -1,8 +1,12 @@
 {
   "niches": [],
   "admin": {
-    "login": "admin",
-    "password": "admin",
-    "connection_id": "c619b95e-3f2e-4d67-b2b5-4427720c661a"
+    "login": "zalex",
+    "password": "souhailosse",
+    "connection_id": "cb7cb4bd-b631-4447-b907-5b9ae6681abb"
+  },
+  "settings": {
+    "logo": "https://i.imgur.com/WXWZqbu.png",
+    "name": "gg-ez.net"
   }
 }

@@ -3,6 +3,8 @@ import 'animate.css'
 import Axios from 'axios'
 import PersonIcon from '@mui/icons-material/Person'
 import HttpsIcon from '@mui/icons-material/Https'
+import ImageIcon from '@mui/icons-material/Image'
+import TitleIcon from '@mui/icons-material/Title'
 
 const Remove = () => {
     //useState HOOKS
@@ -10,6 +12,8 @@ const Remove = () => {
     const [password, setPassword] = useState()
     const [showSuccess, setShowSuccess] = useState(false)
     const [successMsg, setSuccessMsg] = useState('')
+    const [name, setName] = useState()
+    const [logo, setLogo] = useState()
 
     //functions
     const save = async() => {
@@ -20,6 +24,38 @@ const Remove = () => {
                 data: {
                     login: login,
                     password: password
+                }
+            }).then(result => {
+                if(result.data.error === true) return 0
+                setShowSuccess(true)
+                setSuccessMsg('Settings updated 👍 (you will be redirected to the home page in 5 seconds)')
+                setTimeout(() => {
+                    window.location.reload()
+                }, 5000)
+            })
+        }
+        if(name){
+            await Axios({
+                method: 'PUT',
+                url: '/api/update-name',
+                data: {
+                    name: name
+                }
+            }).then(result => {
+                if(result.data.error === true) return 0
+                setShowSuccess(true)
+                setSuccessMsg('Settings updated 👍 (you will be redirected to the home page in 5 seconds)')
+                setTimeout(() => {
+                    window.location.reload()
+                }, 5000)
+            })
+        }
+        if(logo){
+            await Axios({
+                method: 'PUT',
+                url: '/api/update-logo',
+                data: {
+                    logo: logo
                 }
             }).then(result => {
                 if(result.data.error === true) return 0
@@ -51,6 +87,20 @@ const Remove = () => {
                     <HttpsIcon className="w-6 h-6" />
                 </span>
                 <input onChange={e => setPassword(e.target.value)} type="password" className="w-full mx-auto bg-gray-300 rounded-xl shadow-sm py-3 text-gray-100 font-bold text-lg text-center" placeholder="new password... "/>
+            </div>
+
+            <div className="relative w-full text-center md:w-2/6 py-2 my-1 mx-auto">
+                <span className="absolute inset-y-0 left-0 flex items-center pl-5">
+                    <ImageIcon className="w-6 h-6" />
+                </span>
+                <input onChange={e => setLogo(e.target.value)} type="text" className="w-full mx-auto bg-gray-300 rounded-xl shadow-sm py-3 text-gray-100 font-bold text-lg text-center" placeholder="Logo of the Landing Page... "/>
+            </div>
+
+            <div className="relative w-full text-center md:w-2/6 py-2 my-1 mx-auto">
+                <span className="absolute inset-y-0 left-0 flex items-center pl-5">
+                    <TitleIcon className="w-6 h-6" />
+                </span>
+                <input onChange={e => setName(e.target.value)} type="text" className="w-full mx-auto bg-gray-300 rounded-xl shadow-sm py-3 text-gray-100 font-bold text-lg text-center" placeholder="Name of the Landing Page... "/>
             </div>
 
             <center>

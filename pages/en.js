@@ -26,6 +26,8 @@ const En = () => {
     const [locker, setLocker] = useState('')
     const [search, setSearch] = useState('')
     const [niches, setNiches] = useState([])
+    const [lp_name, setLpName] = useState('')
+    const [lp_logo, setLpLogo] = useState('')
 
     //useRef Hooks
     const progressRef = useRef(() => {})
@@ -35,6 +37,11 @@ const En = () => {
         const fetched_data = await fetch('/api/get-niches')
         const json_data = await fetched_data.json()
         setNiches(json_data)
+
+        const fetched_data2 = await fetch('/api/get-settings')
+        const json_data2 = await fetched_data2.json()
+        setLpName(json_data2.name)
+        setLpLogo(json_data2.logo)
     }, [])
 
     useEffect(() => {
@@ -95,7 +102,7 @@ const En = () => {
 
             {/* H T M L   H E A D */}
             <Head>
-                <title>GG-EZ.net - Tweaked and Premium Apps for free, Jailbreak and many more...</title>
+                <title>{lp_name} - Tweaked and Premium Apps for free, Jailbreak and many more...</title>
                 <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
                 <meta name="lang" content="en-US"/>
                 <meta httpEquiv="X-UA-Compatible" content="IE=7" />
@@ -106,7 +113,7 @@ const En = () => {
 
             {/* H E A D E R */}
             <div className="w-full shadow-md text-center text-white bg-red-500 py-4 px-5">
-                <Image src='/logo.png' width='200px' height='70px'/>
+                <img src={lp_logo} width='200px' height='70px' className="mx-auto rounded-xl"/>
                 <h1 className="my-2 px-5"><LocalMallIcon sx={{fontSize: '80px'}} className='font-bold'/></h1>
                 <p className="animate__animated animate__backInLeft text-sm">Tweaked and Premium Apps for free, Jailbreak and many more...</p>
             </div>
