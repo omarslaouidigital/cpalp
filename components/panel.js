@@ -11,6 +11,10 @@ import {useState, useEffect} from 'react'
 import Add from './add'
 import Remove from './remove'
 import Settings from './settings'
+import EditIcon from '@mui/icons-material/Edit'
+import Edit from './edit'
+import ImportExportIcon from '@mui/icons-material/ImportExport'
+import ImportExport from './import-export'
 
 const Panel = () => {
     //useState HOOKS
@@ -39,7 +43,9 @@ const Panel = () => {
                             <div onClick={e => {setPage(2);setExpandMenu(false)}} className='bg-gray-700 text-gray-200 text-lg text-center my-6 py-3 w-5/6 mx-auto rounded-lg shadow-lg'><AddBoxIcon className='text-gray-400 font-bold' /> Add niche</div>
                             <div onClick={e => {setPage(3);setExpandMenu(false)}} className='bg-gray-700 text-gray-200 text-lg text-center my-6 py-3 w-5/6 mx-auto rounded-lg shadow-lg'><SettingsIcon className='text-gray-400 font-bold' /> Settings</div>
                             <div onClick={e => {setPage(4);setExpandMenu(false)}} className='bg-gray-700 text-gray-200 text-lg text-center my-6 py-3 w-5/6 mx-auto rounded-lg shadow-lg'><BarChartIcon className='text-gray-400 font-bold' /> Analytics</div>
-                            <div onClick={e => {setPage(4);setExpandMenu(false)}} className='bg-gray-700 text-gray-200 text-lg text-center my-6 py-3 w-5/6 mx-auto rounded-lg shadow-lg'><DeleteIcon className='text-gray-400 font-bold' /> Remove niche</div>
+                            <div onClick={e => {setPage(5);setExpandMenu(false)}} className='bg-gray-700 text-gray-200 text-lg text-center my-6 py-3 w-5/6 mx-auto rounded-lg shadow-lg'><DeleteIcon className='text-gray-400 font-bold' /> Remove niche</div>
+                            <div onClick={e => {setPage(6);setExpandMenu(false)}} className='bg-gray-700 text-gray-200 text-lg text-center my-6 py-3 w-5/6 mx-auto rounded-lg shadow-lg'><EditIcon className='text-gray-400 font-bold' /> Edit niche</div>
+                            <div onClick={e => {setPage(7);setExpandMenu(false)}} className='bg-gray-700 text-gray-200 text-lg text-center my-6 py-3 w-5/6 mx-auto rounded-lg shadow-lg'><ImportExportIcon className='text-gray-400 font-bold' /> Import/Export</div>
                             <div onClick={e => {log_out();setExpandMenu(false)}} className='bg-gray-700 text-gray-200 text-lg text-center my-6 py-3 w-5/6 mx-auto rounded-lg shadow-lg'><LogoutIcon className='text-gray-400 font-bold' /> Log out</div>
                         </>
                         :
@@ -49,6 +55,8 @@ const Panel = () => {
                             <div onClick={e => setPage(3)} className='bg-gray-700 cursor-pointer hover:bg-gray-900 text-gray-200 text-lg text-center my-6 py-3 w-5/6 mx-auto rounded-lg shadow-lg'><SettingsIcon className='text-gray-400 font-bold' /> Settings</div>
                             <div onClick={e => setPage(4)} className='bg-gray-700 cursor-pointer hover:bg-gray-900 text-gray-200 text-lg text-center my-6 py-3 w-5/6 mx-auto rounded-lg shadow-lg'><BarChartIcon className='text-gray-400 font-bold' /> Analytics</div>
                             <div onClick={e => setPage(5)} className='bg-gray-700 text-gray-200 hover:bg-gray-900 cursor-pointer text-lg text-center my-6 py-3 w-5/6 mx-auto rounded-lg shadow-lg'><DeleteIcon className='text-gray-400 font-bold' /> Remove niche</div>
+                            <div onClick={e => setPage(6)} className='bg-gray-700 text-gray-200 hover:bg-gray-900 cursor-pointer text-lg text-center my-6 py-3 w-5/6 mx-auto rounded-lg shadow-lg'><EditIcon className='text-gray-400 font-bold' /> Edit niche</div>
+                            <div onClick={e => setPage(7)} className='bg-gray-700 text-gray-200 hover:bg-gray-900 cursor-pointer text-lg text-center my-6 py-3 w-5/6 mx-auto rounded-lg shadow-lg'><ImportExportIcon className='text-gray-400 font-bold' /> Import/Export</div>
                             <div onClick={e => log_out()} className='bg-gray-700 cursor-pointer hover:bg-gray-900 text-gray-200 text-lg text-center my-6 py-3 w-5/6 mx-auto rounded-lg shadow-lg'><LogoutIcon className='text-gray-400 font-bold' /> Log out</div>
                         </>
                     }
@@ -56,6 +64,8 @@ const Panel = () => {
                 {page === 2 && <Add />}
                 {page === 3 && <Settings />}
                 {page === 5 && <Remove />}
+                {page === 6 && <Edit />}
+                {page === 7 && <ImportExport />}
             </div>
             
         </div>
