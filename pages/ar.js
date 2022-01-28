@@ -86,12 +86,12 @@ const Ar = () => {
 
     //functions
     const choose_niche = (e) => {
-        setStep2(true)
         setTitle(e.target.parentNode.parentNode.querySelector('h1').innerText)
         setLocker(e.target.parentNode.parentNode.parentNode.querySelector('.locker').innerText)
         setDescription(e.target.parentNode.parentNode.querySelector('.description').innerText)
         setAuthor(e.target.parentNode.parentNode.querySelector('.author').innerText)
         setImg(e.target.parentNode.parentNode.querySelector('.image').src)
+        setStep2(true)
     }
 
     const isShow = (e) => {
