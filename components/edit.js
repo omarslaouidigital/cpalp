@@ -10,6 +10,7 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney'
 import LocalOfferIcon from '@mui/icons-material/LocalOffer'
 import DescriptionIcon from '@mui/icons-material/Description'
 import CheckIcon from '@mui/icons-material/Check'
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 
 const Edit = () => {
     //useState HOOKS
@@ -26,6 +27,26 @@ const Edit = () => {
     }, [])
 
     //functions
+    const copyPath = (niche) => {
+        navigator.clipboard.writeText(`${window.location.origin}/
+            ${undefined != niche.en_title ? 'en' : ''}
+            ${undefined != niche.ar_title ? 'ar' : ''}
+            ${undefined != niche.tr_title ? 'tr' : ''}
+            ${undefined != niche.id_title ? 'id' : ''}
+            ${undefined != niche.fr_title ? 'fr' : ''}
+            ${undefined != niche.de_title ? 'de' : ''}
+            ${undefined != niche.es_title ? 'es' : ''}
+            ${undefined != niche.br_title ? 'br' : ''}
+            ?niche=${niche.id}
+        `)
+        window.scrollTo(0, 0)
+        setShowSuccess(true)
+        setSuccessMsg('Path copied to clipboard 👍')
+        setTimeout(() => {
+            setShowSuccess(false)
+        }, 5000)
+    } 
+
     const edit_niche = async() => {
         await Axios({
             method: 'PUT',
@@ -316,11 +337,15 @@ const Edit = () => {
                                 {niche.es_title && ' ES'}
                                 {niche.br_title && ' BR'}
                             </h1>
+                            <center>
+                                <button onClick={e => copyPath(niche)} className="mt-4 mx-1 py-2 px-4 bg-green-500 rounded-xl shadow-lg font-bold text-white"><ContentCopyIcon /></button>
+                            </center>
                             
                         </div>
                         <center>
-                            <button onClick={e => setNicheToEdit(niche)} className="mt-4 py-4 px-8 bg-red-500 rounded-xl shadow-lg font-bold text-white animate__animated animate__pulse animate__infinite"><EditIcon />Edit niche</button>
+                            <button onClick={e => setNicheToEdit(niche)} className="mt-4 mx-1 py-4 px-8 bg-red-500 rounded-xl shadow-lg font-bold text-white animate__animated animate__pulse animate__infinite"><EditIcon />Edit niche</button>
                         </center>
+                        
                     </div>
                 ))}
             </div>

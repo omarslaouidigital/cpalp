@@ -252,21 +252,21 @@ const Add = () => {
             <div className="relative w-full text-center md:w-2/6 py-2 my-1 mx-auto">
                 <h1 className='w-full mx-auto bg-gray-300 rounded-xl shadow-sm py-3 text-gray-400 font-bold text-lg text-center px-8'><TranslateIcon className="w-6 h-6 text-gray-800" /> Choose languages :
                     <div className="grid gap-2 grid-cols-3 mt-3">
-                        <div>AR <input type="checkbox" onChange={e => e.target.checked ? add_lang('ar') : remove_lang('ar')}/></div>
+                        <div>AR <input type="radio" name="lang" onChange={e => setLangs(['ar'])}/></div>
                         
-                        <div>EN <input type="checkbox" onChange={e => e.target.checked ? add_lang('en') : remove_lang('en')}/></div>
+                        <div>EN <input type="radio" name="lang" onChange={e => setLangs(['en'])}/></div>
                         
-                        <div>ES <input type="checkbox" onChange={e => e.target.checked ? add_lang('es') : remove_lang('es')}/></div>
+                        <div>ES <input type="radio" name="lang" onChange={e => setLangs(['es'])}/></div>
                         
-                        <div>BR <input type="checkbox" onChange={e => e.target.checked ? add_lang('br') : remove_lang('br')}/></div>
+                        <div>BR <input type="radio" name="lang" onChange={e => setLangs(['br'])}/></div>
                         
-                        <div>TR <input type="checkbox" onChange={e => e.target.checked ? add_lang('tr') : remove_lang('tr')}/></div>
+                        <div>TR <input type="radio" name="lang" onChange={e => setLangs(['tr'])}/></div>
                         
-                        <div>ID <input type="checkbox" onChange={e => e.target.checked ? add_lang('id') : remove_lang('id')}/></div>
+                        <div>ID <input type="radio" name="lang" onChange={e => setLangs(['id'])}/></div>
                         
-                        <div>DE <input type="checkbox" onChange={e => e.target.checked ? add_lang('de') : remove_lang('de')}/></div>
+                        <div>DE <input type="radio" name="lang" onChange={e => setLangs(['de'])}/></div>
                         
-                        <div>FR <input type="checkbox" onChange={e => e.target.checked ? add_lang('fr') : remove_lang('fr')}/></div>
+                        <div>FR <input type="radio" name="lang" onChange={e => setLangs(['fr'])}/></div>
                     </div>
                 </h1>
             </div>

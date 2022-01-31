@@ -34,6 +34,30 @@ const Fr = () => {
     const progressRef = useRef(() => {})
     
     //useEffect HOOKS
+    useEffect(async()=> {
+        if(undefined !== window){
+            let params = window.location.search
+            if(params){
+                params = params.replace('?', '')
+                params = params.split('=')
+                let id = params[1]
+                const fetched_data = await fetch('/api/get-niches')
+                const json_data = await fetched_data.json()
+                console.log('id : ' + id)
+                json_data.forEach(elt => {
+                    console.log(elt.id)
+                    if(elt.id == id){
+                        setTitle(elt.fr_title)
+                        setLocker(elt.fr_locker)
+                        setDescription(elt.fr_description)
+                        setAuthor(elt.author)
+                        setImg(elt.image)
+                        setStep2(true)
+                    }
+                })
+            }
+        }
+    }, [])
     useEffect(async() => {
         const fetched_data = await fetch('/api/get-niches')
         const json_data = await fetched_data.json()
