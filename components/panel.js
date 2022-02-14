@@ -32,7 +32,7 @@ const Panel = () => {
         <div className="w-full min-h-screen bg-slate-200 overflow-x-hidden">
 
             <div className="flex w-full">
-                <div className={`relative min-h-screen ${expandMenu ? 'w-full' : 'w-1/4'} md:w-1/4 bg-gray-800 py-5`}>
+                <div className={`relative min-h-screen ${expandMenu ? 'w-full' : 'w-1/4'} md:w-1/3 lg:w-1/4 xl:w-1/6 bg-gray-800 py-5`}>
                     {window.innerWidth < 600 && !expandMenu &&
                         <h1 onClick={e => setExpandMenu(true)} className="text-white font-bold text-center text-2xl"><MenuIcon sx={{fontSize: '40px'}}/></h1>
                     }
