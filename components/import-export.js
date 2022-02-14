@@ -61,7 +61,7 @@ const ImportExport = () => {
         <div className="my-6 px-6 md:px-12 w-full text-center justify-center mx-auto">
             <h1 className='text-center font-bold text-2xl text-gray-800 md:text-5xl mb-7'>Import / Export</h1>
             <center className=''>
-                <input type='file' onChange={e => import_niches(e)} className="mt-4 mx-auto py-4 px-8 bg-blue-500 rounded-xl text-center shadow-lg font-bold text-white"/>
+                <input type='file' onChange={e => import_niches(e)} className="mt-4 mx-auto px-2 py-4 md:px-8 bg-blue-500 rounded-xl text-center shadow-lg font-bold text-white"/>
                 <br />
                 <button onClick={export_niches} className="mt-4 mx-auto py-4 px-8 bg-blue-600 rounded-xl shadow-lg font-bold text-white"><FileDownloadIcon /> Export niches</button>
             </center>

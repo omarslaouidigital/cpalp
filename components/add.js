@@ -154,7 +154,7 @@ const Add = () => {
             return 0
         }
         let niche = {
-            id: uuidv4(),
+            id: uuidv4().substring(0,5),
             image: image,
             author: author
         }

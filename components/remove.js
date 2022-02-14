@@ -29,7 +29,7 @@ const Remove = () => {
         <div className="my-6 px-6 md:px-12 w-full text-center justify-center mx-auto">
             <h1 className='text-center font-bold text-2xl text-gray-800 md:text-5xl'>Remove niche</h1>
 
-            <div className="grid gap-2 grid-cols-4 w-full mt-8 mx-auto">
+            <div className="grid gap-2 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 w-full mt-8 mx-auto">
                 {niches.map((niche, i) => (
                     <div key={i} className='py-3 px-4 rounded-xl my-2 shadow-lg bg-gray-300'>
                         <div className="flex gap-2 px-3 py-2 text-center">

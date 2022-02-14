@@ -110,12 +110,12 @@ const En = () => {
 
     //functions
     const choose_niche = (e) => {
+        setTitle(e.currentTarget.querySelector('h1').innerText)
+        setLocker(e.currentTarget.parentNode.querySelector('.locker').innerText)
+        setDescription(e.currentTarget.querySelector('.description').innerText)
+        setAuthor(e.currentTarget.querySelector('.author').innerText)
+        setImg(e.currentTarget.querySelector('.image').src)
         setStep2(true)
-        setTitle(e.target.parentNode.parentNode.querySelector('h1').innerText)
-        setLocker(e.target.parentNode.parentNode.parentNode.querySelector('.locker').innerText)
-        setDescription(e.target.parentNode.parentNode.querySelector('.description').innerText)
-        setAuthor(e.target.parentNode.parentNode.querySelector('.author').innerText)
-        setImg(e.target.parentNode.parentNode.querySelector('.image').src)
     }
 
     const isShow = (e) => {

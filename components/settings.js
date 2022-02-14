@@ -5,6 +5,7 @@ import PersonIcon from '@mui/icons-material/Person'
 import HttpsIcon from '@mui/icons-material/Https'
 import ImageIcon from '@mui/icons-material/Image'
 import TitleIcon from '@mui/icons-material/Title'
+import FormatColorFillIcon from '@mui/icons-material/FormatColorFill'
 
 const Remove = () => {
     //useState HOOKS
@@ -14,6 +15,7 @@ const Remove = () => {
     const [successMsg, setSuccessMsg] = useState('')
     const [name, setName] = useState()
     const [logo, setLogo] = useState()
+    const [style, setStyle] = useState()
 
     //functions
     const save = async() => {
@@ -66,6 +68,22 @@ const Remove = () => {
                 }, 5000)
             })
         }
+        if(style && style != 0){
+            await Axios({
+                method: 'PUT',
+                url: '/api/update-style',
+                data: {
+                    style: style
+                }
+            }).then(result => {
+                if(result.data.error === true) return 0
+                setShowSuccess(true)
+                setSuccessMsg('Settings updated 👍 (you will be redirected to the home page in 5 seconds)')
+                setTimeout(() => {
+                    window.location.reload()
+                }, 5000)
+            })
+        }
     }
 
     //main render
@@ -101,6 +119,17 @@ const Remove = () => {
                     <TitleIcon className="w-6 h-6" />
                 </span>
                 <input onChange={e => setName(e.target.value)} type="text" className="w-full mx-auto bg-gray-300 rounded-xl shadow-sm py-3 text-gray-100 font-bold text-lg text-center" placeholder="Name of the Landing Page... "/>
+            </div>
+
+            <div className="relative w-full text-center md:w-2/6 py-2 my-1 mx-auto">
+                <span className="absolute inset-y-0 left-0 flex items-center pl-5">
+                    <FormatColorFillIcon className="w-6 h-6" />
+                </span>
+                <select onChange={e => setStyle(e.target.value)} className="w-full mx-auto bg-gray-300 rounded-xl shadow-sm py-3 text-gray-400 font-bold text-lg text-center">
+                    <option value="0" selected>Select your style</option>
+                    <option value="1">Style 1</option>
+                    <option value="2">Style 2</option>
+                </select>   
             </div>
 
             <center>
