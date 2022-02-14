@@ -125,7 +125,8 @@ const Ar = () => {
             setAuthor(e.currentTarget.querySelector('.author').innerText)
         }
         setTitle(e.currentTarget.querySelector('h1').innerText)
-        setLocker(e.currentTarget.parentNode.querySelector('.locker').innerText)
+        setLocker(e.currentTarget.querySelector('.locker').innerText)
+        console.log('locker : ' + e.currentTarget.querySelector('.locker').innerText)
         setImg(e.currentTarget.querySelector('.image').src)
         setStep2(true)
     }
