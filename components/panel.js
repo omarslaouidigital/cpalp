@@ -19,7 +19,7 @@ import ImportExport from './import-export'
 const Panel = () => {
     //useState HOOKS
     const [expandMenu, setExpandMenu] = useState(false)
-    const [page, setPage] = useState()
+    const [page, setPage] = useState(1)
 
     //functions
     const log_out = () => {
@@ -31,8 +31,8 @@ const Panel = () => {
     return (
         <div className="w-full min-h-screen bg-slate-200 overflow-x-hidden">
 
-            <div className="flex">
-                <div className={`relative min-h-screen ${expandMenu ? 'w-5/6' : 'w-1/6'} md:w-1/6 bg-gray-800 py-5`}>
+            <div className="flex w-full">
+                <div className={`relative min-h-screen ${expandMenu ? 'w-full' : 'w-1/4'} md:w-1/4 bg-gray-800 py-5`}>
                     {window.innerWidth < 600 && !expandMenu &&
                         <h1 onClick={e => setExpandMenu(true)} className="text-white font-bold text-center text-2xl"><MenuIcon sx={{fontSize: '40px'}}/></h1>
                     }
@@ -61,6 +61,7 @@ const Panel = () => {
                         </>
                     }
                 </div>
+                {page === 1 && <div className='w-full min-h-screen px-6 md:px-12'></div>}
                 {page === 2 && <Add />}
                 {page === 3 && <Settings />}
                 {page === 5 && <Remove />}

@@ -28,16 +28,7 @@ const Edit = () => {
 
     //functions
     const copyPath = (niche) => {
-        navigator.clipboard.writeText(`${window.location.origin}/
-            ${undefined != niche.en_title ? 'en' : ''}
-            ${undefined != niche.ar_title ? 'ar' : ''}
-            ${undefined != niche.tr_title ? 'tr' : ''}
-            ${undefined != niche.id_title ? 'id' : ''}
-            ${undefined != niche.fr_title ? 'fr' : ''}
-            ${undefined != niche.de_title ? 'de' : ''}
-            ${undefined != niche.es_title ? 'es' : ''}
-            ${undefined != niche.br_title ? 'br' : ''}
-            ?niche=${niche.id}
+        navigator.clipboard.writeText(`${window.location.origin}/${undefined != niche.en_title ? 'en' : ''}${undefined != niche.ar_title ? 'ar' : ''}${undefined != niche.tr_title ? 'tr' : ''}${undefined != niche.id_title ? 'id' : ''}${undefined != niche.fr_title ? 'fr' : ''}${undefined != niche.de_title ? 'de' : ''}${undefined != niche.es_title ? 'es' : ''}${undefined != niche.br_title ? 'br' : ''}?niche=${niche.id}
         `)
         window.scrollTo(0, 0)
         setShowSuccess(true)
@@ -322,7 +313,7 @@ const Edit = () => {
                 </>
             }
 
-            <div className="grid gap-2 grid-cols-4 w-full mt-8 mx-auto">
+            <div className="grid gap-2 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 w-full mt-8 mx-auto">
                 {!nicheToEdit && niches.map((niche, i) => (
                     <div key={i} className='py-3 px-4 rounded-xl my-2 shadow-lg bg-gray-300'>
                         <div className="flex gap-2 px-3 py-2 text-center">

@@ -1,19 +1,10 @@
 {
   "niches": [
     {
-      "id": "6594aacd-6abe-435c-b7e0-1436e6308d21",
-      "image": "https://i.imgur.com/Z1UThb3.png",
-      "author": "gg-ez.net",
-      "en_title": "Spotify++",
-      "en_description": "Get yourself Spotify Premium with bonus features for absolutely free!",
-      "en_keywords": "spotify spotify plus spotify premium spotify++ spotify free download spotify",
-      "en_locker": "https://bigappboi.com/cl/i/1o28k1"
-    },
-    {
       "id": "45a5ebf4-2c68-4057-af78-17931ab04fd6",
       "image": "https://i.imgur.com/PkJvI3M.png",
       "author": "gg-ez.net",
-      "en_title": "Tinder++",
+      "en_title": "AAAA",
       "en_description": "With this app you can get all premium features of tinder plus for free",
       "en_keywords": "tinder tinder pro tinder free tinder premium tinder++ tinder plus tinder gold tinder hack",
       "en_locker": "https://bigappboi.com/cl/i/ndp3pn"
@@ -28,15 +19,6 @@
       "ar_locker": "https://bigappboi.com/cl/i/qk5r96"
     },
     {
-      "id": "e16368b7-4a06-4d88-a171-3b5d166e1c1e",
-      "image": "https://i.imgur.com/PkJvI3M.png",
-      "author": "gg-ez.net",
-      "ar_title": "Tinder++",
-      "ar_description": "هذا التطبيق يمنحك جميع مميزات تيندر المدفوع مجانا",
-      "ar_keywords": "tinder tinder pro tinder free tinder premium tinder++ tinder  تيندر plus tinder gold tinder hack",
-      "ar_locker": "https://bigappboi.com/cl/i/klp5p8"
-    },
-    {
       "id": "5c83491e-4129-4152-825d-4d9afde8701f",
       "image": "https://i.imgur.com/EhVdh1n.png",
       "author": "gg-ez.net",
@@ -44,15 +26,6 @@
       "ar_description": "هذا التطبيق يمنحك النسخة المدفوعة من سبوتفاي مجانا و بدون إعلانات",
       "ar_keywords": "spotify spotify plus spotify pro spotify++ spotify free سبتفي سبوتيفاي ",
       "ar_locker": "https://bigappboi.com/cl/i/4258g4"
-    },
-    {
-      "id": "dfe3c77c-ae98-4099-b0bd-3c3f34902df5",
-      "image": "https://i.imgur.com/PkJvI3M.png",
-      "author": "gg-ez.net",
-      "fr_title": "Tinder++",
-      "fr_description": "Cette application vous permet d'avoir la version pro de Tinder Gratuitement",
-      "fr_keywords": "tinder tinder pro tinder free tinder premium tinder++ tinder plus tinder gold tinder hack",
-      "fr_locker": "https://bigappboi.com/cl/i/r7pkpl"
     },
     {
       "id": "51377c29-bcaf-43d4-be6f-a4b2ec674005",
@@ -359,33 +332,16 @@
       "ar_description": "نسخة مهكرة من تطبيق كافي ",
       "ar_keywords": "تطبيق كافي cafe café",
       "ar_locker": "https://bigappboi.com/cl/i/1o2d2x"
-    },
-    {
-      "id": "c7478c7a-1c29-48ad-94d3-efeb358f8344",
-      "image": "https://i.imgur.com/eXtA2FL.jpg",
-      "author": "gg-ez.net",
-      "ar_title": "Shein Coupons",
-      "ar_description": "تطبيق يمنح كوبونات شين يومياً",
-      "ar_keywords": "Shein Coupons كوبونات شين",
-      "ar_locker": "https://bigappboi.com/cl/i/375257"
-    },
-    {
-      "id": "571f172a-2cfd-4b67-a251-6635ba3046bf",
-      "image": "https://i.imgur.com/JBpDVue.png",
-      "author": "gg-ez.net",
-      "ar_title": "Tiktok++",
-      "ar_description": "تطبيق لتهكير متابعين تيكتوك مجانا ",
-      "ar_keywords": "متابعين تيكتوك tiktok tik tok تيك توك",
-      "ar_locker": "https://bigappboi.com/cl/i/meplp2"
     }
   ],
   "admin": {
     "login": "zalex",
     "password": "souhailosse",
-    "connection_id": "59102a4b-95ec-4a0e-b7a1-310e292d0536"
+    "connection_id": "71cc9dc4-6b3d-442f-9538-241592094855"
   },
   "settings": {
     "logo": "https://i.imgur.com/WXWZqbu.png",
-    "name": "gg-ez.net"
+    "name": "gg-ez.net",
+    "style": "2"
   }
 }

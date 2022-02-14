@@ -1,0 +1,88 @@
+{
+  "analytics": [
+    {
+      "id": "7efd0970-9947-4ebf-8f2f-bef2658ac4e1",
+      "os": "MacIntel",
+      "browser": "Chrome",
+      "lang": "en-GB",
+      "ref": "",
+      "fingerprint": 874653440,
+      "path": "/ar",
+      "niche": "Whatsapp Gold",
+      "lockerClicked": false,
+      "date": "2022-02-01T00:19:10.441Z"
+    },
+    {
+      "id": "7efd0970-9947-4ebf-8f2f-bef2658ac4e1",
+      "os": "MacIntel",
+      "browser": "Chrome",
+      "lang": "en-GB",
+      "ref": "",
+      "fingerprint": 874653440,
+      "path": "/ar",
+      "niche": "Tinder++",
+      "lockerClicked": false,
+      "date": "2022-02-01T00:19:25.658Z"
+    },
+    {
+      "id": "99a2cc37-5c1e-4ae9-b09c-6dc47179b36d",
+      "os": "MacIntel",
+      "browser": "Chrome",
+      "lang": "en-GB",
+      "ref": "",
+      "fingerprint": 330119044,
+      "path": "/ar",
+      "niche": "Tinder++",
+      "lockerClicked": false,
+      "date": "2022-02-09T21:36:00.717Z"
+    },
+    {
+      "id": "99a2cc37-5c1e-4ae9-b09c-6dc47179b36d",
+      "os": "MacIntel",
+      "browser": "Chrome",
+      "lang": "en-GB",
+      "ref": "",
+      "fingerprint": 330119044,
+      "path": "/ar",
+      "niche": "Tinder++",
+      "lockerClicked": false,
+      "date": "2022-02-09T21:36:52.264Z"
+    },
+    {
+      "id": "99a2cc37-5c1e-4ae9-b09c-6dc47179b36d",
+      "os": "MacIntel",
+      "browser": "Chrome",
+      "lang": "en-GB",
+      "ref": "",
+      "fingerprint": 330119044,
+      "path": "/ar",
+      "niche": "Tinder++",
+      "lockerClicked": false,
+      "date": "2022-02-09T21:36:59.930Z"
+    },
+    {
+      "id": "e0068dc7-4192-4f53-86a7-14c5b4398d92",
+      "os": "MacIntel",
+      "browser": "Chrome",
+      "lang": "en-GB",
+      "ref": "",
+      "fingerprint": 330119044,
+      "path": "/ar",
+      "niche": "Whatsapp Gold",
+      "lockerClicked": false,
+      "date": "2022-02-09T21:41:11.295Z"
+    },
+    {
+      "id": "e0068dc7-4192-4f53-86a7-14c5b4398d92",
+      "os": "MacIntel",
+      "browser": "Chrome",
+      "lang": "en-GB",
+      "ref": "",
+      "fingerprint": 330119044,
+      "path": "/ar",
+      "niche": "Whatsapp Gold",
+      "lockerClicked": false,
+      "date": "2022-02-09T21:41:39.231Z"
+    }
+  ]
+}
