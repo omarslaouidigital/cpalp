@@ -256,11 +256,6 @@ const Ar = () => {
 
         </div>
         }
-
-
-
-
-
         {css_style == 2 && 
         <div className="bg-gray-100 w-full min-h-screen overflow-x-hidden">
             {(loading_niches || loading_settings) ? <Loader /> : 
