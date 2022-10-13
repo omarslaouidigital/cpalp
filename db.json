@@ -467,6 +467,24 @@
       "en_description": "Here you can download Geometry Dash for free 100%",
       "en_keywords": "geometry dash, geometry",
       "en_locker": "https://verifyyou.net/fb53a95"
+    },
+    {
+      "id": "f3c7d",
+      "image": "https://geometrydash-free.com/data/image/geometrydash.png",
+      "author": "driftmailer",
+      "br_title": "Geometry Dash",
+      "br_description": "Aquí puedes descargar Geometry Dash gratis 100%",
+      "br_keywords": "geometry dash, geometry",
+      "br_locker": "https://verifyyou.net/fb53a95"
+    },
+    {
+      "id": "f58f4",
+      "image": "https://geometrydash-free.com/data/image/geometrydash.png",
+      "author": "driftmailer",
+      "es_title": "Geometry Dash",
+      "es_description": "Aquí puedes descargar Geometry Dash gratis 100%",
+      "es_keywords": "geometry dash, geometry",
+      "es_locker": "https://verifyyou.net/fb53a95"
     }
   ],
   "admin": {
