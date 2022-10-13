@@ -19,8 +19,8 @@ function Home() {
 			{
 				lang === 'ar' ? <Ar /> :
 				lang === 'fr' ? <Fr /> :
-				lang === 'tr' ? <Tr /> :
-				lang === 'id' ? <Id /> :
+				// lang === 'tr' ? <Tr /> :
+				// lang === 'id' ? <Id /> :
 				lang === 'de' ? <De /> :
 				lang === 'es' ? <Es /> :
 				lang === 'pr' ? <Br /> :
