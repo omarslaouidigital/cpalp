@@ -9,7 +9,7 @@
             </div>
         </div>
         <div>
-            <h6 className='text-gray-300 text-sm'>Author: <span className="text-red-300">gg-ez.net</span></h6>
+            <h6 className='text-gray-300 text-sm'>Author: <span className="text-red-300">driftmailer.com</span></h6>
             <h1 className="font-bold text-gray-600 text-2xl">Instagram++</h1> {/* T I T L E   H E R E */}
             <p className="text-gray-400 text-sm description">This app will help you get a verification badge for instagram.</p> {/* D E S C R I P T I O N   H E R E */}
             <div className='flex'>

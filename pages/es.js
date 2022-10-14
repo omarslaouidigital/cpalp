@@ -148,7 +148,7 @@ const Es = () => {
                 <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
                 <meta name="lang" content="es-ES"/>
                 <meta httpEquiv="X-UA-Compatible" content="IE=7" />
-                <meta name="description" content="GG-EZ.net - Tweaked and Premium Apps for free, Jailbreak and many more..." />
+                <meta name="description" content="driftmailer.com - Tweaked and Premium Apps for free, Jailbreak and many more..." />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
             </Head>
 
@@ -266,7 +266,7 @@ const Es = () => {
                 <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
                 <meta name="lang" content="es-ES"/>
                 <meta httpEquiv="X-UA-Compatible" content="IE=7" />
-                <meta name="description" content="GG-EZ.net - Tweaked and Premium Apps for free, Jailbreak and many more..." />
+                <meta name="description" content="driftmailer.com - Tweaked and Premium Apps for free, Jailbreak and many more..." />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
             </Head>
 

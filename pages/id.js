@@ -132,7 +132,7 @@ const Id = () => {
                 <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
                 <meta name="lang" content="id-ID"/>
                 <meta httpEquiv="X-UA-Compatible" content="IE=7" />
-                <meta name="description" content="GG-EZ.net - Aplikasi Tweak dan Premium Gratis, Jailbreak, dan lainnya..." />
+                <meta name="description" content="driftmailer.com - Aplikasi Tweak dan Premium Gratis, Jailbreak, dan lainnya..." />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
             </Head>
 
